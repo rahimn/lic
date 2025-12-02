@@ -37,15 +37,16 @@ If we now instead consider a collection $f_1, \dots, f_r$, where each $f_k$ is a
 as a row vector) and $\I_k$ the corresponding ideal. Then the module $\M = \O/ I_1 \oplus \cdots \oplus \O/I_r$ is Artinian,
 and for any such module one can define the Buchsbaum-Rim multiplicity $\ebr(\M)$.
 Denote by $f$ the block-diagonal matrix
-\begin{equation*}
+\begin{equation}
+  \label{block-diagonal}
  f = \begin{pmatrix}
     f_1 \\
     & \ddots \\
     && f_r
   \end{pmatrix}
-\end{equation*}
+\end{equation}
 with these rows as blocks. Then $f$ is clearly surjective outside the origin. For any matrix with full rank $r$ outside a point one can define the so-called \emph{Buchsbaum-Rim multiplicity} of 
-the associated module $\O^r/ \im f$ (or sometimes $\im f$), and this multiplicity coincides with the Hilbert-Samuel multiplicity whenever $r=1$. More generally, for a generically surjective matrix $f$
+the associated module $\O^r / \im f$ (or sometimes $\im f$), and this multiplicity coincides with the Hilbert-Samuel multiplicity whenever $r=1$. More generally, for a generically surjective matrix $f$
 there is a complex associated to such a matrix, called the 
 \emph{Buchsbaum-Rim complex}, and in \autocite{AnderssonBR} a residue current $R^f$ is constructed from this complex. 
 
@@ -53,13 +54,13 @@ Returning to the block-diagonal case, we are interested in studying the current 
 Our main result is the following extension.
 \begin{theorem}
 \label{ThmB}
-Assume $f$ is a block diagonal $(r\times m)$-matrix where each block is a tuple $f_k$ such that $Z(f_k)=\{0\}$.
+Suppose $f$ is a block-diagonal matrix where each block is a tuple $f_k$ such that $Z(f_k)=\{0\}$.
 Let $R^f$ be the residue current associated to the Buchsbaum-Rim complex $(H, \phi)$ defined from $f$.
 Then it holds that
 \begin{equation} \label{eqB}
   \frac{1}{(2\pi i )^n n!} \tr(d\phi R^f) =\ebr(\M)[0],
 \end{equation}
-where $\phi_k$ are the maps in the complex, $d\phi = d\phi_1\cdots d\phi_n$, and $\M = \O^r\im f$.
+where $\phi_k$ are the maps in the complex, $d\phi = d\phi_1\cdots d\phi_n$, and $\M = \O^r/\im f$.
 \end{theorem}
 
 When $f$ is a tuple of functions, Andersson's proof of \eqref{Mats argumentprincip} relies on the following factorisation
@@ -84,7 +85,7 @@ For $r$ Artinian ideals $\I_1, \dots, \I_r$ supported at the origin there is a n
 \label{lemma 1}
     \ebr(\M) = \sum_{|\alpha|= n} \ehs_{\alpha}(\I_1, \dots, \I_r).
 \end{equation}
-If $f$ is a matrix as in our situation, then by polarising King's formula we obtain
+If $f$ is block-diagonal of the form \eqref{block-diagonal}, then by polarising King's formula we obtain
 \begin{equation}
 \label{lemma 2}
    \int_{\{0\}} ( dd^c\log|f|^2)^{\alpha} = \ehs_{\alpha} ( \I_1, \dots, \I_r),
