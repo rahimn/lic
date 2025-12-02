@@ -1,0 +1,84 @@
+\subsection{Residue currents}
+A function $\chi: \R_{\geqslant 0} \to  \R_{\geqslant 0}$ is called a smooth approximand of the characteristic function $\chi_{[1, \infty)}$ of the interval $[1, \infty)$, denoted 
+\begin{equation*}
+    \chi \sim \chi_{[1, \infty)},
+\end{equation*}
+if $\chi(t) \equiv 0$ for $t\ll 1$ and $\chi(t) \equiv 1$ for $t\gg 1$.
+
+Let $f$ be a holomorphic function on a manifold $X$ such that $Z(f):=\{f=0\}$ has positive codimension. Herrera and Lieberman proved in \autocite{HL} that the limit
+\begin{equation*}
+ \lim_{\e \to 0}   \int_{|f|^2 > \e} \frac{\xi}{f}
+\end{equation*}
+exists for test forms $\xi$ and defines the \emph{principal value current} $1/f$ of $f$. From the above limit, it follows that the current $\bpd (1/f) $ is supported at $Z(f)$, and such a current is called a \emph{residue current}. Let $s$ be a generically non-vanishing holomorphic section of a Hermitian vector bundle over $X$ such that $Z(f) \subset Z(s)$. If $\chi \sim \chit$ then we can regularise these currents (see e.g.\ \autocite{AnderssonWulcanAsm}) as 
+\begin{equation}
+\label{regularisering av pv och res}
+\frac{1}{f} = \frac{\chi(|s|^2/\e)}{f} \quad \text{and}  \quad  \bpd\frac{1}{f} = \frac{\bpd\chi(|s|^2/\e)}{f}.
+\end{equation}
+ There are several generalisations of this type of currents. For instance, we can define the principal value and residue of a generically non-vanishing holomorphic section $f$ of a line bundle $L \to X$.
+Moreover, Coleff and Herrera introduced in \autocite{CH} products of the form
+\begin{equation}
+\label{chproducts}
+    \frac{1}{f_r} \cdots \frac{1}{f_{s+1}}\bpd \frac{1}{f_s} \wedge\cdots \wedge \bpd \frac{1}{f_1}.
+\end{equation}
+When $m = \codim Z(f)$, where $f$ is the tuple $f=(f_1, \dots, f_m)$, then the \emph{Coleff-Herrera product} $\bpd(1/f_m)\wedge \cdots \wedge \bpd(1/f_1)$
+is anti-commutative and is supported on $Z(f)$. 
+
+\subsubsection{Pseudomeromorphic currents}
+For details and a general reference of the material presented in this section and the next, see e.g.\ \autocite{AnderssonWulcanAsm}.
+To get a coherent framework for a calculus of residue and principal value currents the sheaf $\PM$ of \emph{pseudomeromorphic currents} on $X$ was introduced in \autocite{AWdecomposition} and further developed in \autocite{AnderssonSamuelsson}. It consists of direct images under holomorphic mappings of products of test forms and currents on the form \eqref{chproducts}. Moreover, $\PM$ is closed under $\pd$, $\bpd$ and multiplication with smooth forms. Further, pseudomeromorphic currents satisfy the following dimension principle. 
+\begin{prop}
+    Suppose $\mu\in \PM$ has bidegree $(p, q)$. If $\mu$ is supported on a subvariety $Z\subset X$ such that $\codim Z > q$, then $\mu = 0$.
+\end{prop}
+Furthermore, pseudomeromorphic currents admit natural restrictions to constructible subsets of $X$. In particular, if $V \subset X$ is a subvariety and $s$ is a holomorphic section of a Hermitian bundle over $X$ such that $V = \{s=0\}$, then the restriction $\mu|_{X\setminus V}$ of $\mu$ to the open set $X\setminus V$ has an extension $\1_{X\setminus V} \mu$ to a pseudomeromorphic current on $X$. This current can be obtained as a limit of pseudomeromorphic currents
+\begin{equation}
+    \1_{X\setminus V} \mu = \lim_{\epsilon\to 
+    0}\chi(|s|^2/\epsilon) \mu
+\end{equation}
+where $\chi \sim \chit$. In fact, the limit is independent of the choice of $\chi$ and $s$. It follows that $\1_V \mu := \mu-\1_{X\setminus V} \mu$ is a pseudomeromorphic current on $X$ supported on $V$.
+
+\subsubsection{Almost semi-meromorphic currents}
+A \emph{semi-meromorphic current} is a current of the form $\omega/f$ where $f$ is a generically non-vanishing holomorphic section of a line bundle $L \to X$ and $\omega$ is a smooth form with values in $L$.
+An \emph{almost semi-meromorphic} current $a$ in $X$ is a current of the form
+\begin{equation}
+   a= \pi_* \left(\frac{\omega}{f}\right)
+\end{equation}
+where $\pi: X'\to X$ is a modification and $\omega/f$ is semi-meromorphic. 
+More generally, if $E$ is a holomorphic bundle over $X$, we say that a current valued section $a$ is almost semi-meromorphic if there is a modification $\pi$, a smooth form-valued section $\omega$ of $L\otimes \pi^*E$, and a holomorphic section $f$ of a line bundle $L\to X$, such that $a = \pi_*(\omega/f)$. By definition, an almost semi-meromorphic current is a pseudomeromorphic on $X$. Hence, $\pd a$ and $\bpd a\in \PM$  for any $a \in \asm(X)$.
+In fact, we have the following (see e.g.\ \autocite[Proposition 4.16]{AnderssonWulcanAsm}).
+\begin{prop}
+\label{asm bar utanför nollan}
+    Suppose $a\in \asm(X)$ is smooth outside a subvariety $V \subset X$. Then $\pd a\in \asm(X)$ and $\1_{X\setminus V} \bpd a \in \asm(X)$.
+\end{prop}
+Let $\zss(a)$ denote the \emph{Zariski singular support} of $a$, i.e.\ the smallest Zariski-closed set $V \subset X$ such that $a$ is smooth outside $V$. Then the pseudomeromorphic current
+\begin{equation}
+    r(a):= \1_{\zss(a)} \bpd a
+\end{equation}
+is the \emph{residue of $a$}. Note that the residue current $\bpd (1/f)$ considered above is precisely the residue of the almost semi-meromorphic current $1/f$. 
+Almost semi-meromorphic currents have the \emph{standard extension property} (SEP), which means that for $a\in \asm(X) $ and any subvariety $V\subset X$ of positive codimension we have $\1_V a = 0$. Thus, if $s$ is a section of a Hermitian bundle with $\zss(a) \subset \{s=0\}$ and $\chi \sim \chit$, then we have the following regularisations of the residue of an almost semi-meromorphic $a$
+\begin{equation}
+    \label{regularisering av residy}
+    r(a) = \lim_{\e \to 0} \bpd \chi(|s|^2/\e) \wedge a = \lim_{\e \to 0} d\chi (|s|^2/\e) \wedge a .
+\end{equation}
+The set $\asm(X)$ of almost semi-meromorphic currents in $X$ in fact forms an algebra over the smooth forms $\Ed$ on $X$. If $a, b\in \asm(X)$ are smooth outside a subvariety $V\subset X$, then
+there is a current $A\in \asm(X)$ that coincides with $a\wedge b$ outside
+$\zss(a)\cup \zss(b)$. By the SEP it then follows that $a\wedge b$ extends as an almost semi-meromorphic current in $X$. Note that in the special case when $\omega\in \Ed$ and $a\in \asm(X)$ then 
+\begin{equation}
+\label{residy av glatt gånger asm}
+    r(\omega \wedge a) = \omega \wedge r(a)
+\end{equation}
+follows immediately from the SEP.
+\begin{rmk}
+\label{arg-principen-remark} 
+Suppose $X$ is a neighbourhood of the origin $0\in \C$. Suppose $f\in \O_X$ satisfies $Z(f)=\{0\}$ so that $f = z^a h$, for some non-vanishing $h\in \O_X$. Since the current $\bpd (1/f) \wedge df $ is a $(1, 1)$-current supported on $Z(f)=\{0\}$ it acts on any smooth function $g$ on $X$. 
+Let $g\in \O_X$ and suppose $\chi \sim \chit$ such that $\chi(t)\equiv 1$ for $t\geqslant 1$. Then from \eqref{regularisering av pv och res} the action $\left< \bpd\frac{1}{f} \wedge df ,  g \right>$ of the current $\bpd (1/f) \wedge df $ on $g$ is obtained as the limit as $\epsilon \to 0$ of
+\begin{multline*}
+\int_{X} 
+g\frac{\bpd\chi(|f|^2/\epsilon)\wedge df}{f} 
+= \int_{|f|^2\leqslant \e} 
+g\frac{\bpd\chi(|f|^2/\epsilon)\wedge df}{f}
+=\\ \int_{|f|^2=\e} g\frac{\chi(|f|^2/\epsilon) df}{f}
+=  \int_{|f|^2=\e} \frac{gdf}{f} = 2\pi i ag(0)
+\end{multline*}
+where we have applied Stokes' theorem in the second equality, and in the last equality we invoke the argument principle. 
+Hence, we can view \eqref{arg principen} as a smooth version of the argument principle, since it in fact holds for any smooth $g$. With this perspective, \eqref{Mats argumentprincip} is a generalisation of the argument principle to a tuple $f$ with an isolated zero at the origin in arbitrary dimension $n$. 
+\end{rmk}

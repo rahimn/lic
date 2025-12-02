@@ -1,0 +1,115 @@
+In the given setting, we briefly recall Andersson's construction in \autocite{AnderssonBR} of the residue current $R^f$ associated to a holomorphic morphism $f: E \to Q$ of bundles $E, Q$ over a manifold $X$. This residue is constructed from a complex $(H, \phi)$, the so-called \emph{Buchsbaum-Rim complex} associated to $f$, consisting of holomorphic bundles over $X$.
+
+\subsection{The Buchsbaum-Rim complex}
+\label{br complex section}
+Let $X$ be a neighbourhood of the origin $0\in \C^n$ and let $f=(f_{k\ell})$ be a $(r\times m)$-matrix of holomorphic functions $f_{k\ell}$ on $X$ such $Z(f)=\{0\}$, where $Z(f)$ is the set where $f$ has sub-optimal rank. Let $E, Q$ be trivial holomorphic bundles over $X$ of rank $m$ and $r$ and with frames $e_1, \dots, e_m$ and $\e_1,\dots, \e_r$, respectively. We identify $f$ with the holomorphic bundle morphism $f: E\to Q$ defined by
+\begin{equation*}
+    f = \sum_{k=1}^r\sum_{\ell=1}^m f_{k\ell} \e_k \otimes e_{\ell}.
+\end{equation*}
+
+We now define the Buchsbaum-Rim complex $(H, \phi)$ associated to $f$.
+Let $H_0 := Q$, $H_1:=E$ and for $\nu \geqslant 2$
+\begin{equation}
+\label{defofH}
+ H_{\nu}:=   \Lambda^{r+\nu-1} H_1 \otimes S^{\nu-2} (H_0^*) \otimes \det H_0^*.
+\end{equation} For $\nu\geqslant 2$, a section $\eta \in \E (H_{\nu})$ can be written in the frame $\epsilon_k$, with dual frame $\epsilon_k^*$, as 
+\begin{equation*}
+    \eta = \sum\limits_{\substack{\alpha\in \N^r \\ |\alpha| = \nu - 2} }\eta_{\alpha} \otimes \epsilon^*_{\alpha} \otimes \epsilon^*
+\end{equation*}
+with $\eta_{\alpha} \in \E(\Lambda^{r+\nu-1} H_1) $ and where
+\begin{equation*}
+    \epsilon^*_{\alpha} 
+    % =\frac{(\epsilon^*)^{\alpha}}{\alpha!} 
+    = \frac{1}{\alpha!} (\epsilon^*_1)^{\alpha_1} \cdots (\epsilon^*_r)^{ \alpha_r}.
+\end{equation*}
+
+Write $f = \sum_{k=1} f_k \otimes \e_k$ where $f_k \in \O(H_1^*)$ correspond to the rows in $f$.
+Let $\delta_{f_k}$ be the contraction with $f_k$, which extends to the exterior algebra $\Lambda H_1$ of $H_1$, cf.\ \eqref{contraction on exterior algebra}. We can then view $f$ as the morphism 
+\begin{equation}
+\label{definition of f}
+    f=\sum_{k=1}^r  \delta_{f_k}\otimes \epsilon_k : H_1 \to H_0.
+\end{equation}
+which acts on sections $\eta\in \E( H_1)$ by
+\begin{equation*}
+    \sum_{k=1}^r  \delta_{f_k}(\eta) \epsilon_k.
+\end{equation*}
+Let $\epsilon_k^*
+$ be the dual frame of $\epsilon_k$ and define $\epsilon^*=\epsilon_1^* \wedge \cdots \wedge \epsilon_r^*$. Define a morphism 
+\begin{equation}
+\label{definition of tau}
+    \delta_F = \delta_{f_r} \cdots \delta_{f_1} \rho : H_2 \to H_1,
+\end{equation}
+where $\rho: \det H_0^* \to \O_X$ is the morphism defined by $\epsilon^* \mapsto 1$. 
+Let $u\in \O(H_0)$ and write $u = \sum_{k=1}^r u_k \e_k$. Contraction $\delta_{u}: H_0^* \to \O$ with $u$ extends to a map on the symmetric algebra $S(H_0^*)$ 
+\begin{equation}
+\label{contraction on symmetric algebra}
+     \delta_{u} (\e_{i_1}^* \cdots  \e_{i_s}^*):= \sum_{k=1}^s u_{i_k} \widehat{\e_{i_k}^*}
+\end{equation}
+ where the circumflex means that $\e_{i_k}^*$ has been omitted from the symmetric product $\e_{i_1}^* \cdots  \e_{i_r}^*$. Note that $\delta_u$ is commutative, i.e.\ for $v, w \in \O(S(H_0^*))$, we have
+ \begin{equation}
+ \label{commutativity of contraction}
+     \delta_u( v w) = \delta_u (v)w + v\delta_u (w).
+ \end{equation}
+ As a consequence,
+ \begin{equation}
+ \label{contraction on powers}
+     \delta_u (v^k) = k \delta_u(v) v^{k-1}.
+ \end{equation}
+Finally, for $\nu \geqslant 3$, we define morphisms 
+\begin{equation}
+\label{definition of delta}
+    \delta = \sum_{k=1}^r \delta_{f_k} \delta_{\epsilon_k} : H_{\nu} \to H_{\nu-1}
+\end{equation}
+which act on sections of $H_{\nu}$ as
+\begin{equation*}
+  \d (\xi \otimes u \otimes \epsilon^*)= \sum_{k=1}^r \d_{f_k} (\xi) \otimes \d_{\epsilon_k} (u) \otimes \epsilon^*,
+\end{equation*}
+where $\xi \in \E(\Lambda H_1)$ and $u\in \E(S(H_0^*))$. 
+% \textcolor{red}{$\alpha$ inte ett bra namn här}
+We note that $\d^2 = 0$, $\d_F \d=0$ and $f\d_F$, which follows from the fact that the $\delta_{f_k}$ are anti-commutative \eqref{anti-commutativity of contraction} while the $\delta_{\epsilon_k}$ are commutative \eqref{commutativity of contraction}. Hence, we get a complex $(H, \phi)$ with 
+\begin{equation}
+\label{def of phi}
+    \phi_1:=f ,\quad  \phi_2:=\delta_F, \quad \phi_{\nu}:=\d: H_{\nu} \to H_{\nu-1}, \quad \nu\geqslant 3
+\end{equation}
+This complex is the \emph{Buchsbaum-Rim complex associated to $f$}. 
+
+We define an auxiliary graded holomorphic bundle 
+\begin{equation}
+\label{auxiliary algebra}
+    A = (\Lambda H_1) \otimes S(H_0) \otimes (\det H_0^* \oplus \O)
+\end{equation}
+with the grading induced from letting
+\begin{equation*}
+    \deg( \Lambda^kH_1) = k, \quad \deg (S^k(H_0))=0, \quad \deg \O = 0, \quad \deg (\det H_0^*) = -r+1.
+\end{equation*}
+(Note that the last one is non-standard.)
+We can define a product on $\E(A)$. For $\xi, \xi' \in \E(\Lambda H_1)$, $u, v\in \E(S(H_0))$ and $a, b\in \E(\det H_0^* ) \oplus \E $
+\begin{equation*}
+   ( \xi \otimes u \otimes a) \otimes (\xi' \otimes v \otimes b) := (\xi \wedge \xi') \otimes (uv) \otimes (a\wedge b)
+\end{equation*}
+where $\wedge$ is the usual exterior product and the concatenation $uv$ is the symmetric product in $S(H_0)$. Note that the product $\otimes$ respects the grading, so that $\E(A)$ is a graded algebra over $\E$.
+We equip $A$ with a superstructure and extend the product to $\Ed(A)$ as in \cref{superstructure}.
+
+As a subbundle of $A$ 
+\begin{equation*}
+    H := \bigoplus_{\nu \in \N} H_{\nu}
+\end{equation*}
+inherits a grading with $\deg H_{\nu} = \nu$, as expected, and $H$ is further equipped with the superstructure inherited from $A$. We also equip $H_0$ and $H_1$ with trivial metrics and connections with respect to the frames $e_1, \dots, e_m$ and $\e_1, \dots, \e_r$ of $ H_1$ and $H_0$, respectively. The Buchsbaum-Rim complex inherits a trivial metric and connection $d$.
+The morphisms $f, \delta_F$ and $\delta$ extend to maps on form-valued sections of $H$ (cf.\ \eqref{morphisms on forms}). Note that with the superstructure all of these maps are odd endomorphisms. 
+As before, we get an even endomorphism
+\begin{equation}
+\label{d av f_k}
+    d\delta_{f_k} = \delta_{df_k},
+\end{equation}
+cf.\ \eqref{d av kontraktion}. Note also that $\d_{\e_k}$ is even and that $d\d_{\e_k}=0$. Moreover, $\deg \rho = r-1$ and $d\rho = 0$.
+Finally, in $\Ed(\End H)$ we have the following commutation rules
+\begin{multline}
+\label{commutation rules}
+    \d \circ \bpd = - \bpd \circ \d, \quad 
+   \d_F \circ \bpd = - \bpd \circ \d_F  \quad 
+   \delta_{f_k}\delta_{f_{\ell}} = - \delta_{f_{\ell}}\delta_{f_k} \\
+  \delta_{f_k} \delta_{\epsilon_{\ell}} 
+    = \delta_{\epsilon_{\ell}}\delta_{f_k}, \quad
+ \rho \delta_{f_k} = (-1)^{r-1 } \delta_{f_k} \rho, \quad 
+   \rho \delta_{\epsilon_k} = \delta_{\epsilon_k}\rho.
+\end{multline}

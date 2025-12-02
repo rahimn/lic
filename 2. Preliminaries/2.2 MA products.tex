@@ -1,0 +1,48 @@
+\subsection{Monge-Ampère products}
+\label{MA section}
+Throughout, let $X$ be a neighbourhood of the origin $0\in \C^n$. Let $\psi_1, \dots, \psi_r$ be smooth plurisubharmonic (psh) functions on $X$ which are locally bounded outside the origin. Then their mixed Monge-Ampère products (cf.\ \autocite[Theorem III.4.5]{demailly}) are  the currents defined recursively as
+\begin{equation}
+\label{mma def}
+ dd^c\psi_k \wedge \dots\wedge dd^c\psi_1 = dd^c \left( \psi_k dd^c\psi_{k-1} \wedge \dots\wedge dd^c\psi_1\right)
+ \end{equation}
+ for $1 \leqslant k \leqslant r$, and
+where $d$ and 
+\begin{equation*}
+d^c := \frac{1}{4\pi i }(\pd -\bpd )    
+\end{equation*}
+are taken in the sense of currents.
+These are closed and positive currents, and 
+in particular, this means that they are order $0$ currents, i.e.\ they are currents with measure coefficients.
+If $u_{k}^N$ is a sequence of psh functions decreasing to $\psi_k$, for each $k=1, \dots,r$, then the mixed Monge-Ampère product can be obtained as the limit (cf.\ \autocite[Theorem III.4.5 \& Proposition III.4.9]{demailly})
+\begin{equation}
+\label{mma regularisation}
+    dd^c\psi_r \wedge \dots\wedge dd^c\psi_1= \lim_{N\to \infty}  dd^c u_r^N \wedge \dots\wedge dd^c u_1^N.
+\end{equation}
+In view of this, it is clear that the Monge-Ampère product is multilinear and symmetric in the factors $\psi_k$. Sometimes we will use the following multi-index notation. Suppose $\psi_1, \dots, \psi_r$ are functions as above and that $\alpha = (\alpha_1, \dots, \alpha_r) \in \N^r$ is a multi-index. Then we define
+\begin{equation}
+\label{multi-index MA}
+    (dd^c\psi)^{\alpha} : = (dd^c \psi_1)^{\alpha_1}\wedge \cdots \wedge (dd^c \psi_r)^{\alpha_r}.
+\end{equation}
+
+We will consider the typical case $\psi_k = \log |f_k|^2 $ where $f_k$ are tuples of holomorphic functions defined on a neighbourhood $X$ of the origin $0\in \C^n$, such that $Z(f_k)=\{0\}$. Then the ideal $\I_k$ defined by $f_k$
+is Artinian with support at the origin, for $k=1, \dots,r$. 
+The main result we need from this section is the following well-known consequence of polarising King's formula \eqref{kings formel}. We provide a proof for the convenience of the reader.
+\begin{prop}
+\label{mma lelong numbers}
+    Let $X$ be a neighbourhood of the origin $0 \in \C^n$. 
+    Suppose $f_k$ are tuples of holomorphic functions on $X$ such that $Z(f_k)=\{0\}$ and let $\I_k$ be the ideal defined by $f_k$, for $k=1, \dots, r$. Then for a multi-index $\alpha\in \N^r$ such that $|\alpha|= n$, it holds that
+    \begin{equation}
+    \int_{\{0\} }(dd^c \log|f|^2)^{\alpha} = \ehs_{\alpha}(\I_1, \dots, \I_r).
+    \end{equation}
+\end{prop}
+Note that the left hand side makes sense since the Monge-Ampère product has measure coefficients. 
+As an immediate consequence of this proposition together with \eqref{brmixrelation} we get the following.
+\begin{lem}
+\label{mixedlelong}
+Let $f_k$ be tuples of holomorphic functions on a neighbourhood $X$ of the origin $0\in \C^n$ such that $Z(f_k) = \{0\}$ for $k=1, \dots, r$. Then it holds that
+\begin{align}
+    \1_{\{0\}} \sum_{|\alpha|=n } (dd^c\log|f|^2)^{\alpha} &= \ebr (\M)[0]
+\end{align}
+where $\M = \oplus_{k=1}^r \O/\I_k$ and $\I_k$ are the ideals defined by $f_k$.
+\end{lem}
+% \textcolor{blue}{formulera i termer av $m$-primära ideal?}

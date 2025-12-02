@@ -1,0 +1,188 @@
+Suppose now that we are in the setting of \cref{ThmB}, i.e.\ $f$ is a block diagonal matrix of holomorphic functions on $X$ where the blocks are tuples $f_k$ satisfying $Z(f_k)=\{0\}$. We get a decomposition $E = \oplus_{k=1}^r E_k$ of trivial holomorphic subbundles $E_k \subset E$ such that
+\begin{equation*}
+    f = \sum_{k=1}^r f_k\otimes \e_k
+\end{equation*}
+with $f_k \in \O(E_k^*)$. In this case the sections $\sigma_k$ defined in \eqref{minimal inverse} are precisely the minimal inverses of the tuples $f_k$ (cf.\ \eqref{koszul minimal invers}), since the sections $f_k$ of $E^*$ take values in different subbundles $E_k^*$ of $E^*$. 
+Let $(H, \phi)$ be the Buchsbaum-Rim complex of $f$ and 
+ let $d\phi$ be the (smooth) form-valued section 
+\begin{equation}
+\label{def of dphi}
+    d\phi = d\phi_1 \cdots d\phi_n
+\end{equation}
+of $\Hom(H_n, H_0)$.
+
+First, as noted in the introduction, \cref{ThmB} follows from \cref{ThmA} together with \cref{mixedlelong}.
+
+To prove \cref{ThmA}, we analyse the differential form $\tr( d\phi u_n)$, where $u_n$ is the form-valued section of $\Hom(H_n, H_0)$ defined (outside the origin) from the Buchsbaum-Rim complex, cf.\ \eqref{uformula}. Since $d\phi$ is smooth, and $u_n$ extends to an almost semi-meromorphic current $U_n$ across the origin, it holds that
+$\tr (d\phi u_n) $ extends to the almost semi-meromorphic current $\tr(d\phi U_n)$ across the origin. Moreover, (cf.\ \eqref{residy av glatt gånger asm})
+\begin{equation}
+  r(  \tr (d\phi U_n) )= \tr (d\phi R^f),
+\end{equation}
+where $R^f = r(U_n)$ is the residue associated to $f$, see \cref{br residue current}.
+We study the form $\tr (d\phi u_n)$ and calculate the residue of its almost semi-meromorphic current extension.
+
+\begin{prop}
+\label{traceofres}
+Outside the origin, it holds that
+\begin{equation}
+\label{terms in trace of residue}
+    \tr( d\phi u_n )= (n-1)! \sum_{k=1}^r \sum_{\substack{\alpha \in \N^r \\ |\alpha|=n-1}}(\alpha_k+1)\delta_{df_k}(\sigma_k)\wedge \left(\d_{df}\left(\bpd \sigma\right)\right)^{\alpha},
+\end{equation}
+where 
+$   \left(\d_{df}\left(\bpd \sigma\right)\right)^{\alpha} = \left(\d_{df_1}(\bpd \sigma_1)\right)^{\alpha_1} \wedge \cdots \wedge \left(\d_{df_r}(\bpd \sigma_r)\right)^{\alpha_r}.
+$
+\end{prop}
+\begin{proof}
+Recall, from \eqref{def of phi} and \eqref{def of dphi}, that 
+\begin{equation*}
+    d\phi = df d \delta_F (d\delta)^{n-2}.
+\end{equation*}
+We begin by calculating the differentials of the morphisms separately (see \eqref{definition of f}, \eqref{definition of tau}, and \eqref{definition of delta} for definitions of the maps). Throughout the proof, we use \eqref{d av f_k} and the commutation rules \eqref{commutation rules} freely. 
+
+First, 
+\begin{equation*}
+  df = \sum_{k=1}^r \delta_{df_k} \otimes \epsilon_k.
+\end{equation*}
+Next, note that $d\rho = 0$. Hence, from Leibniz' rule
+\eqref{leibnizendconn}, we get
+\begin{equation*}
+    d\delta_F =  \sum_{\ell=1}^r (-1)^{r-\ell}  \delta_{f_r}\cdots  \delta_{df_{\ell}}  \cdots   \delta_{f_1}  \rho .
+\end{equation*}
+Lastly, $d\delta = \sum_k \delta_{df_k} \delta_{\epsilon_k} $, since $d\delta_{\epsilon_k}=0$. Hence the multinomial theorem implies that
+\begin{equation*}
+    (d\delta)^{n-2} = \sum\limits_{|\beta|=n-2} \binom{n-2}{\beta}\delta_{df}^{\beta}\delta_{\epsilon}^{\beta}, 
+\end{equation*}
+where $
+   \delta_{df}^{\beta} = \delta_{df_1}^{\beta_1}\cdots \delta_{df_r}^{\beta_r}$ and 
+$\delta_{\e}^{\beta} = \delta_{\e_1}^{\beta_1}\cdots \delta_{\e_r}^{\beta_r}.
+$ Taking all of this together, we see that 
+\begin{equation*}
+    d\phi = \sum_{k, \ell=1}^r \sum_{|\beta|=n-2} (-1)^{r-\ell} \binom{n-2}{\beta} \delta_{df_{\ell}}\delta_{df_{k}} \delta_{df}^{\beta} \delta_{f_r} \cdots  \widehat{\delta_{f_{\ell}}}  \cdots   \delta_{f_1} \rho   \delta_{\epsilon}^{\beta}  \otimes \epsilon_{k}.
+\end{equation*}
+
+After expanding $u_n$ as in \eqref{uformula}, we find that 
+\begin{equation*}
+    \sum_{|\beta|=n-2} (-1)^{r-\ell} \binom{n-2}{\beta} \delta_{df_{\ell}}\delta_{df_{k}} \delta_{df}^{\beta} \delta_{f_r} \cdots  \widehat{\delta_{f_{\ell}}}  \cdots   \delta_{f_1} ( \widetilde{\sigma} \wedge  \bpd \sigma_k \wedge (\bpd \sigma)^{\beta} ),
+\end{equation*} is the coefficient of $\epsilon_k\otimes \delta_{\epsilon_k^*}$ in $d\phi(u_n)$.
+Now, since $\delta_{f_m}$ is holomorphic, it follows from \eqref{endconndef} together with \eqref{minimal inverse}, that $\d_{f_m} (\bpd \sigma_p) = 0$, for any $m$ and $p$. Hence,
+\begin{equation*}
+  \delta_{f_r} \cdots  \widehat{\delta_{f_{\ell}}}   \cdots   \delta_{f_1} \left(\widetilde{\sigma} \wedge \bpd \sigma_k \wedge (\bpd\sigma)^{\beta} \right) = (-1)^{r-\ell} \sigma_{\ell} \wedge \bpd \sigma_k \wedge (\bpd\sigma)^{\beta}.
+\end{equation*}
+As a consequence, we see that
+\begin{multline*}
+    \tr (d\phi u_n) = \sum_{k, \ell=1}^r \sum_{|\beta|=n-2}\binom{n-2}{\beta} \delta_{df_{\ell}} \delta_{df_k} \delta_{df}^{\beta} \left( \sigma_{\ell} \wedge \bpd \sigma_k \wedge \left(\bpd \sigma\right)^{\beta} \right)\\
+    = \sum_{\ell=1}^r \sum_{|\alpha|=n-1}\binom{n-1}{\alpha} \delta_{df_{\ell}} \delta_{df}^{\alpha} \left( \sigma_{\ell} \wedge \left(\bpd \sigma\right)^{\alpha} \right). 
+\end{multline*}
+
+Finally,  it follows from 
+% \textcolor{blue}{se över formulering lemma i hänvisning} 
+\eqref{multiple deltas on multiple taus} that $\delta_{df_k}^{\alpha_k} ((\bpd \sigma_k)^{\alpha_k}) = \alpha_k! 
+(\delta_{df_k}(\bpd \sigma_k))^{\alpha_k}$. Similarly, we get 
+\begin{equation}
+\label{multiple delta on sigma and bar sigma}
+    \delta_{df_k}^{\alpha_k+1} \left(\sigma_k \wedge 
+\left(\bpd \sigma_k\right)^{\alpha_k} \right) = (\alpha_k+1)! \delta_{df_k}
+(\sigma_k) \wedge (\delta_{df_k}(\bpd \sigma_k))^{\alpha_k}.
+\end{equation}
+Moreover, since the $f_k$ take values in different subbundles $E_k$, it holds that $\delta_{df_k} (\bpd \sigma_{\ell}) = 0$ whenever $k\neq \ell$. Thus, 
+\begin{equation*}
+    \delta_{df_{k}} \delta_{df}^{\alpha} \left( \sigma_k \wedge \left(\bpd \sigma\right)^{\alpha} \right) = \alpha!(\alpha_k+1)\delta_{df_k}(\sigma_k)\wedge \left(\d_{df}\left(\bpd \sigma\right)\right)^{\alpha}
+\end{equation*}
+and the result follows.
+\end{proof}
+Note that the terms on the right hand side of \eqref{terms in trace of residue} are almost semi-meromorphic. Indeed, this follows from \cref{asm bar utanför nollan} since each $\sigma_k$ is almost semi-meromorphic (see \eqref{koszul minimal invers}) and $\asm(X)$ forms an algebra. In fact, we have the following computation of the residue of such a term.
+\begin{lem}
+\label{residytermvisjmfr}
+Suppose $\alpha\in \N^r$ is a multi-index with $|\alpha|=n-1$. Then
+\begin{equation}
+\label{resMAformula}
+    r(\d_{df_k} (\sigma_k) (\delta_f(\bpd\sigma))^{\alpha})  = (2\pi i )^n \1_{\{0\}} dd^c \log | f_k |^2\wedge (dd^c \log | f |^2)^{\alpha}
+\end{equation}
+where 
+\begin{equation}
+    (dd^c \log | f |^2)^{\alpha}=(dd^c \log | f_1 |^2)^{\alpha_1}\wedge\cdots\wedge(dd^c \log | f_r |^2)^{\alpha_r}.
+\end{equation}
+\end{lem}
+
+To prove this lemma we need the following result.
+\begin{prop}
+\label{chi lemma}
+    Let $g=(g_1, \dots, g_p)$ and $h=(h_1, \dots, h_q)$ be tuples of holomorphic functions in a neighbourhood $X$ of the origin $0\in \C^n$ such that the ideal $(g_1, \dots, g_p)\subset \m$ and the ideal $(h_1, \dots, h_q)$ is $\m$-primary, where $\m = (z_1, \dots, z_n) \subset \O_X$ is the maximal ideal at the origin $0\in \C^n$.  
+    Then there is a positive integer $N_0$ such that for any integer $N\geqslant N_0$, the inequality
+    $|g|^2\geqslant e^{-N}/2$ implies $|h|^2 \geqslant e^{-N^2}$. 
+\end{prop}
+
+\begin{proof}
+    First note that since $(h_1, \dots, h_q)$ is $\m$-primary, there is a positive integer $a$ such that $\m^{a}\subset (h)$. 
+    Now, from the inclusions $(g) \subset \m$ and $\m^a \subset (h)$ we get the inequalities $ |g| \leqslant A |z| $ and    $|z|^a \leqslant B |h|$ for some positive constants $A, B$. Thus, there is a positive constant $C$ such that
+    $|h| \geqslant C |g|^a$.
+    
+    Suppose now that $|g|^2 \geqslant e^{-N}/2$. Then we have
+    \begin{equation*}
+        |h|^2 \geqslant C^2 |g|^{2a} \geqslant C^2 \frac{e^{-aN}}{2^{a}}.
+    \end{equation*}
+    Hence, we can get an inequality $|h|^2 \geqslant e^{-N^2}$ by ensuring that 
+$C^2 \frac{e^{-aN}}{2^{a}} \geqslant e^{-N^2}.$ This inequality can then be rewritten as 
+\begin{equation*}
+    N^2 \geqslant a N + a \log 2 - 2\log C
+\end{equation*}
+and we can take $N_0$ to be the smallest positive integer such that this inequality holds. This proves the proposition.
+\end{proof}
+
+\begin{proof}[Proof of \cref{residytermvisjmfr}]
+We compare the regularisation \eqref{mma regularisation} of the Monge-Ampère product with the regularisation \eqref{regularisering av residy} of the residue. Without loss of generality, we can assume $k=r$, since the Monge-Ampère product is commutative (cf.\ \eqref{mma regularisation}).
+
+Write $\psi_{\ell} := \log |f_{\ell}|^2$. We regularise the current
+\begin{equation*}
+  \1_{\{0\}} \bpd \pd \psi_r \wedge \left( \bpd \pd \psi \right)^{\alpha}
+\end{equation*}
+as follows.
+ Let $\rho: \R \to \R$ be a smooth, convex, increasing function such that $\rho(t)$ is constant for $t\leqslant -\log 2$ and $\rho(t)=t$ for $t\geqslant 0$. Given a positive integer $M$, define $\rho_M(t)= \rho(t+M)-M$. For $\ell =1, \dots, r$, we define $u_{\ell}^M= \rho_M\circ \psi_{\ell}$ and note that $u_{\ell}^M$ is a sequence of plurisubharmonic functions decreasing to $\psi_{\ell}$. Then, by \eqref{mma regularisation}, we get
+\begin{equation}
+\label{regularisering 2 av MA}
+T:=    \bpd \pd \psi_r \wedge \left( \bpd \pd \psi \right)^{\alpha} = \lim\limits_{N\to \infty} \bpd \pd u_r^N \wedge( \bpd \pd u^{N^2})^{\alpha}.
+\end{equation}
+
+Let $\chi = \rho \circ \log$, and observe that $\chi \sim \chi_{[1, \infty)}$. Define 
+\begin{equation}
+\label{chi_ell}
+    \chi_{\ell, M} (z)  = \chi (|f_{\ell}(z)|^2/e^{-M} )
+\end{equation}
+and note that $\pd u_{\ell}^M = \chi_{\ell, M} \pd \psi_{\ell}$, whence \begin{equation*}
+   (  \bpd \pd u_{\ell}^M)^{\alpha_{\ell}} =  \alpha_{\ell}\chi_{\ell, M}^{\alpha_{\ell}-1} \bpd \chi_{\ell, M}  \wedge \pd \psi_{\ell} \wedge (\bpd\pd \psi_{\ell})^{\alpha_{\ell}-1} +\chi_{\ell, M}^{\alpha_m} \wedge (\bpd \pd \psi_{\ell})^{\alpha_{\ell}}.
+ \end{equation*}
+ It follows that in the right-hand side of \eqref{regularisering 2 av MA}, there appear products with factors $\chi_{r, N}$,  $\bpd \chi_{r, N} $ and $\chi_{\ell, N^2} $, $\bpd \chi_{\ell, N^2} $  for $ \ell= 1, \dots, r$. 
+ By construction $\chi(t)= 0$ when $t \leqslant 1/2$ and $\chi(t)= 1$ when $t\geqslant 1$. We therefore see that $\chi_{\ell, M} (z)=0$ when $|f_{\ell}|^2 \leqslant e^{-M}/2 $ and $\chi_{\ell, M} = 1$ when $|f_{\ell}|^2 \geqslant e^{-M}$, for $\ell = 1, \dots, r$. From \cref{chi lemma} we get that there is a positive integer $N_0$ such that if $N\geqslant N_0$, then the inequality 
+ $|f_{r}|^2 \geqslant e^{-N}/2 $ implies the inequality $|f_{\ell}|^2 \geqslant e^{-N^2} $, for all $\ell = 1, \dots, r$. Thus, for 
+ $\ell=1, \dots, r$, we see that $\chi_{\ell, N^2} = 1$ on the support of $\chi_{r, N}$, for any $N \geqslant N_0$.
+ As a consequence, for $N\geqslant N_0$ and $\ell=1, \dots, r$ it holds that
+ \begin{multline*}
+     \chi_{r, N} \chi_{\ell, N^2} = \chi_{r, N}, \quad \bpd \chi_{r, N} \chi_{\ell, N^2}= \bpd \chi_{r, N}, \\ \chi_ {r, N}\bpd \chi_{\ell, N^2} = 0, \quad \bpd \chi_{r, N}\wedge \bpd \chi_{\ell, N^2} = 0  .
+ \end{multline*}
+ 
+ Thus, 
+ \begin{multline*}
+ T=    \lim\limits_{N\to \infty} \bpd \pd u_r^{N} \wedge( \bpd \pd u^{N^2})^{\alpha} = \lim_{N\to \infty} 
+ \bpd \chi_{r, N}  \wedge \pd \psi_r \wedge \left( \bpd \pd \psi \right)^{\alpha}  \\
+ +
+    \lim_{N\to \infty} \chi_{r, N} \bpd \pd \psi_r \wedge \left( \bpd \pd \psi\right)^{\alpha }=: A + B.
+ \end{multline*}
+A calculation shows that 
+$\pd \psi_{\ell} = \delta_{df_{\ell}}( \sigma_{\ell})$ and $  \bpd\pd \psi_{\ell} = \delta_{df_{\ell}}( \bpd \sigma_{\ell})$ and hence, 
+by \eqref{regularisering av residy} (cf.\ \eqref{chi_ell}), we recognise the current
+\begin{equation*}
+  A=  \lim_{N \to \infty} 
+  \bpd \chi_{r, N}  \wedge \pd \psi_r \wedge \left( \bpd \pd \psi \right)^{\alpha} = \lim_{N\to \infty} \bpd \chi_{r, N} \wedge \delta_{df_{r}}( \sigma_{r}) \wedge \left( \delta_{df}( \bpd \sigma) \right)^{\alpha}
+\end{equation*}
+as the residue of the almost semi-meromorphic current $\delta_{df_{r}}( \sigma_{r}) \wedge \left( \delta_{df}( \bpd \sigma) \right)^{\alpha}$, which is supported precisely at the origin.
+The current $B$ is the restriction $\1_{X\setminus\{0\}}B'$ of the order $0$ current (cf.\ \cref{MA section})
+\begin{equation*}
+    B' = \bpd \pd \psi_r \wedge \left( \bpd \pd \psi\right)^{\alpha}
+\end{equation*}
+whence $\1_{\{0\}} B = 0$. 
+Finally, this means that 
+\begin{multline*}
+   (2\pi i )^n \1_{\{0\}} dd^c \log | f_r |^2\wedge (dd^c \log | f |^2)^{\alpha} =   \1_{\{0\}} T = \\ A = r(\d_{df_r} (\sigma_r) (\delta_f(\bpd\sigma))^{\alpha})
+\end{multline*}
+which proves the results.
+ \end{proof}

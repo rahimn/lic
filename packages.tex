@@ -1,0 +1,90 @@
+% ---------- LANGUAGE, SPACING, AND FONTS ----------
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{csquotes}
+
+% ---------- MATH PACKAGES ----------
+\usepackage{amsfonts, amsmath, amsthm, amssymb, mathrsfs}
+% \numberwithin{equation}{section}
+
+% ---------- GRAPHICS AND DIAGRAMS ----------
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{tikz-cd}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% ---------- LAYOUT AND LISTS ----------
+\usepackage[shortlabels]{enumitem}
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{relsize}
+\usepackage{listings}
+
+% ---------- UTILITIES ----------
+\usepackage{units}
+\usepackage{icomma}
+\usepackage{xcolor}
+\usepackage{todonotes}
+
+% ---------- HYPERREF & CLEVEREF (load order matters!) ----------
+\usepackage{hyperref}
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
+
+% ---------- THEOREM ENVIRONMENTS ----------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{defn}[theorem]{Definition}
+
+\theoremstyle{remark}
+\swapnumbers
+\newtheorem{rmk}[theorem]{Remark}
+\newtheorem{ex}[theorem]{Example}
+
+% Revert for later environments
+\theoremstyle{plain}
+
+% ---------- NAMED THEOREMS ----------
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{namedthm}[1]
+  {\renewcommand{\thistheoremname}{##1}\begin{genericthm}}
+  {\end{genericthm}}
+
+\newtheorem*{genericthm*}{\thistheoremname}
+\newenvironment{namedthm*}[1]
+  {\renewcommand{\thistheoremname}{##1}\begin{genericthm*}}
+  {\end{genericthm*}}
+
+% ---------- CLEVEREF LABEL NAMES (ALL CAPITALIZED) ----------
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lem}{Lemma}{Lemmas}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{defn}{Definition}{Definitions}
+\crefname{rmk}{Remark}{Remarks}     
+\crefname{ex}{Example}{Examples}
+\crefname{genericthm}{Theorem}{Theorems}
+
+
+% ---------- BIBLIOGRAPHY ----------
+\usepackage[
+  backend=biber,
+  giveninits=true,
+  uniquename=init,
+  doi=false, isbn=false, url=false, eprint=false
+]{biblatex}
+\addbibresource{references.bib}
+
+% Remove "In:" for articles only
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+% Remove "pp." before page numbers
+\DeclareFieldFormat{pages}{#1}
+
+% ---------- OTHER SYMBOLS ----------
+\renewcommand{\qedsymbol}{$\blacksquare$}

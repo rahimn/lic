@@ -1,0 +1,54 @@
+% Related to the above complex, Andersson constructs a residue current, which is the same construction as in \autocite{AnderssonWulcanRes} were a residue current is constructed from a general generically exact complex. We describe this construction in the current setting, following \autocite{AnderssonBRcurrent}. 
+\subsection{The Buchsbaum-Rim residue current}
+\label{br residue current}
+Let $\sigma_f$ be the minimal inverse of $f:H_1\to H_0$, i.e the section of $H_1\otimes H_0^*$ such that if we write
+\begin{equation*}
+\sigma_f=\sum_{k=1}^r \sigma_k \delta_{\epsilon_k^*} 
+\end{equation*}
+then $\sigma_k \in \E_{ X\setminus \{0\}}(H_1)$ are the sections of minimal norms such that outside the origin
+\begin{equation}
+    \label{minimal inverse}
+    f_k(\sigma_{\ell})=\delta_{k\ell}.
+\end{equation}
+We also define the section $\widetilde{\sigma}\in \E_{ X\setminus \{0\}}(\wedge^r E)$
+as
+\begin{equation*}
+    \widetilde{\sigma}= \sigma_1 \wedge \cdots \wedge \sigma_r.
+\end{equation*} 
+Then the section $\tau:= \widetilde{\sigma}\otimes \epsilon^*
+\in \E_{ X\setminus \{0\}}(\wedge^rE\otimes \det Q^*)$ induces a morphism 
+ \begin{equation*}
+    \tau( \xi) := \tau \otimes \xi : H_1 \to H_2.
+ \end{equation*}
+Note that $\delta_F(\tau)=1$.
+Finally, for $\nu \geqslant 2$,  the section $\sigma$ of $H_1\otimes H_0^*$ defined by
+\begin{equation*}
+    \sigma = \sum_{k=1}^r \sigma_k \otimes \epsilon_k^*
+\end{equation*}
+induces morphisms 
+\begin{equation*}
+    \sigma(\xi \otimes u \otimes \e^*) := \sigma \otimes(\xi \otimes u \otimes \e^*): H_{\nu} \to H_{\nu+1}.
+\end{equation*}
+Note that $\sigma_f$, $\tau$ and $\sigma$ are odd sections of the auxiliary bundle $A$ and they define odd endomorphisms of $H$. Moreover, $\sigma_f, \tau $ and $\sigma$ (which a priori are defined only outside the origin) extend as almost semi-meromorphic currents across the origin,  see \autocite[Lemma 4.1]{AnderssonBR}.
+
+Outside the origin we define a form-valued section $u_{n}$ of $\Hom(H_0, H_n)$ (cf.\ \eqref{defofH})
+by
+\begin{equation*}
+    u_{n}= (\bpd \sigma)^{\otimes(n-2)} \otimes \tau \otimes \bpd \sigma_f.
+\end{equation*}
+In the frame $\epsilon_k$ we can write
+\begin{equation}
+\label{uformula}
+    u_{n}=\sum_{k=1}^r \sum_{\substack{\alpha\in \N^r \\ |\alpha| = \nu - 2} } \widetilde{\sigma} \wedge  \bpd \sigma_k \wedge (\bpd \sigma)^{\alpha} \otimes  \epsilon^*_{\alpha} \otimes \epsilon^* \otimes \delta_{ \epsilon^*_k },
+\end{equation}
+where \begin{align}
+(\bpd\sigma)^{\alpha} &= (\bpd\sigma_1)^{\alpha_1}\wedge \cdots \wedge (\bpd \sigma_r)^{\alpha_r}.
+\end{align}
+Note that we have used that $\bpd \sigma_{\ell}$ is even, so that we can place the $\sigma$-terms in any order.
+The form-valued section $u_n$ is of bi-degree $(0, n-1)$ and it is smooth outside the origin. In fact, since $\asm(X)$ is an algebra, we get from \cref{asm bar utanför nollan} that $u_n$ extends to an almost semi-meromorphic current $U_n$ across the origin. 
+The \emph{(Buchsbaum-Rim) residue current $R^f$ associated to the matrix $f$} is then the residue of this almost semi-meromorphic current 
+\begin{equation*}
+  R^f := r(U_n) 
+\end{equation*}
+and $R^f$ is a $(0, n)$-current supported at the origin and with values in $\Hom(H_0, H_n)$.
+

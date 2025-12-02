@@ -1,0 +1,31 @@
+\subsection{An explicit example}
+\begin{ex}
+Suppose now that the tuples $f_k$ coincide, i.e.\ (with slight abuse of notation) there is a tuple $g=(g_1, \dots, g_s)$ of holomorphic functions such that $f_k = g$ for each $k = 1, \dots, r$. This means that $\sigma_k = \tau$, where $\tau$ is the minimal inverse of $g$, see \eqref{koszul minimal invers}. In this special case, we get \cref{ThmB} as a consequence of Andersson's result \eqref{Mats argumentprincip} and we do not need to invoke \cref{ThmA}. 
+
+Indeed, from \cref{traceofres} and a similar calculation as in \eqref{pascals triangel 1}-\eqref{pascals triangel 2}, we get
+\begin{multline*}
+    \tr (d\phi u_n) 
+    =(n-1)!\sum_{k=1}^r \sum_{|\alpha|=n-1} (\alpha_k+1) \delta_{dg}(\tau )\wedge\left(\delta_{dg}(\bpd\tau)\right)^{n-1} = 
+   \\
+     \left( \sum_{|\alpha|=n} 1 \right)n! \delta_{dg}(\tau )\wedge\left(\delta_{dg}(\bpd\tau)\right)^{n-1} = 
+     \\ 
+     \binom{n+r-1}{r-1} n! \delta_{dg}(\tau )\wedge\left(\delta_{dg}(\bpd\tau)\right)^{n-1} .
+\end{multline*}
+Now, since
+\begin{equation*}
+   n! \delta_{dg}(\tau )\wedge\left(\delta_{dg}(\bpd\tau)\right)^{n-1} =  \delta_{dg}^n\left(\tau \wedge (\bpd\tau)^{n-1} \right)
+\end{equation*}
+(cf.\ \eqref{multiple delta on sigma and bar sigma}) we get from \eqref{residy av glatt gånger asm} together with \eqref{Mats argumentprincip} that 
+\begin{multline*}
+    r(\tr (d\phi u_n) ) =  \binom{n+r-1}{r-1}  \delta_{dg}^n r\left(\tau \wedge (\bpd\tau)^{n-1} \right) =\\  \binom{n+r-1}{r-1} \delta_{dg}^n \widetilde{R}^g =  \binom{n+r-1}{r-1}  \ehs(\I)[0].
+\end{multline*}
+Finally, by \eqref{mixed mult on diagonals} and \eqref{brmixrelation}, the module $\M = \oplus_{k=1}^r \O/\I$ defined from $f$ has multiplicity 
+\begin{equation*}
+    \ebr(\M) =  \binom{n+r-1}{r-1} \ehs(\I).
+\end{equation*}
+Hence, we see that in this special case, \cref{ThmB}
+\begin{equation*}
+ \frac{1}{(2\pi i)^n n!}    \tr (d\phi R^f) = \ebr(\M) [0]
+\end{equation*}
+ follows directly from \eqref{Mats argumentprincip}.
+\end{ex}

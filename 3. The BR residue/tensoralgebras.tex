@@ -1,0 +1,14 @@
+\subsection{Tensor algebra}
+The product $\Dot{\otimes}$  in the symmetric algebra $S(M)$ is defined so that on elements $m, m'\in M$ we have $$m\Dot{\otimes} m' = m\otimes m' + m'\otimes m.$$ Contraction $\delta_x:M \to A$ with an element $x\in M^*$ for an $A$-module $M$, extends to the tensor algebra $\bigotimes M$ by 
+\begin{equation*}
+    \delta_x (m_1\otimes \cdots  \otimes m_k) = \delta_xm_1 \otimes m_2\otimes \cdots \otimes m_k.
+\end{equation*}
+Hence, contraction is also defined on the symmetric algebra and will act on $S(M)$ according to 
+\begin{equation*}
+\d_x(m_1\Dot{\otimes} \cdots \Dot{\otimes} m_k) =    \sum_{\ell=1}^k \delta_x(m_k) \widehat{m_k}
+\end{equation*}
+where $\widehat{m_k}$ means we have omitted the element $m_k$ in the symmetric product. Thus, we have as a consequence that 
+\begin{equation}
+    \delta_x (u \Dot{\otimes}  v ) = \delta_xu \Dot{\otimes} v + u \Dot{\otimes}\delta_x v 
+\end{equation}
+for any elements $u, v \in S(M)$.

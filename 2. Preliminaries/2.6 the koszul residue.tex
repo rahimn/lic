@@ -1,0 +1,88 @@
+\subsection{The Koszul complex and residue current}
+\label{koszul section}
+Let $X$ be a neighbourhood of the origin $0\in \C^n$ and let $f=(f_1, \dots, f_m)$ be a tuple of holomorphic functions defined on $X$ such that $Z(f):=\{f=0\} = \{0\}$. Let $F$ be a trivial holomorphic rank $m$ bundle over $X$ and fix a frame $e=(e_1, \dots, e_m)$ with dual frame $e^*= (e_1^*, \dots, e_m^*)$. We view $f$ as a section of the dual bundle $F^*$ 
+\begin{equation*}
+    f := \sum_{k=1}^m f_k e_k^*.
+\end{equation*}
+Let $\delta_f$ be the map given by contraction with $f$
+\begin{equation*}
+    \delta_f e_k :=f_k.
+\end{equation*}
+Contraction with $f$ extends to a map on the exterior algebra $\Lambda F$ of $F$ by defining
+\begin{equation}
+\label{contraction on exterior algebra}
+    \delta_f (e_{i_1}\wedge \cdots \wedge e_{i_r})= \sum_{k=1}^r (-1)^{k-1}f_{i_k} \widehat{e_{i_k}}
+\end{equation}
+ where the circumflex means that $e_{i_k}$ has been omitted from the exterior product $e_{i_1}\wedge \cdots \wedge e_{i_r}$. Note that $\delta_f$ is anti-commutative, i.e.\ for homogeneous $\xi, \eta\in \E(\Lambda F)$ 
+ \begin{equation}
+ \label{anti-commutativity of contraction}
+     \delta_f ( \xi \wedge \eta ) = \delta_f(\xi) \wedge \eta + (-1)^{\deg \xi} \xi \wedge \delta_f(\eta).
+ \end{equation}
+ As a result, $\delta_f$ defines a differential, $\delta_f^2=0$, on the exterior algebra. 
+The Koszul complex associated to $f$ is the complex
+\begin{center}
+\begin{tikzcd}
+0 \arrow[r] & \Lambda^m F \arrow[r, "\delta_f"] & \cdots & \cdots \arrow[r, "\delta_f"] &\Lambda^2 F \arrow[r, "\delta_f"] &F \arrow[r, "\delta_f"] &\O .
+\end{tikzcd}
+\end{center} 
+
+We now recall Andersson's contruction in \autocite{AnderssonResofIdeals} of the residue current $\widetilde{R}^f$, see also e.g.\ \autocite[Example 4.18]{AnderssonWulcanAsm}.
+First, we view the Koszul complex $A =  \oplus_k A_k := \oplus_k \Lambda^k F$ as a graded holomorphic bundle with the product $\otimes$ being the usual exterior product $\wedge$, and we equip $A$ with a superstructure as in \cref{superstructure}. 
+We equip $A_1$ with a trivial metric and connection $d$ 
+with respect to the frame $e_1, \dots, e_m$ and take the induced metric and connection on $A$.  
+Let $\tau$ be the section of $A_1$ of minimal norm such that $f (\tau) = 1$ outside the origin. In the given frame, we can then write
+\begin{equation}
+\label{koszul minimal invers}
+    \tau =  \frac{1}{|f|^2} \sum_{k=1}^m \overline{f_k} e_k.
+\end{equation}
+Note that $\tau \in \Ed_{X\setminus \{0\}}(A) $ is odd and $\bpd \tau$ is even. Moreover, one can show that $\tau$ extends across the origin as an almost semi-meromorphic current. Since $\asm(X)$ is an algebra, we get from \cref{asm bar utanför nollan} that the section $v_n \in \Ed_{X\setminus \{0\}}(A)$ defined by
+\begin{equation}
+\label{koszul asm}
+    v_n = \tau \wedge (\bpd\tau)^{n-1} 
+\end{equation}
+ extends to an almost semi-meromorphic current $V_n$ across the origin.
+The residue current $\widetilde{R}^f$ associated to $f$ is then the residue of the almost semi-meromorphic current $V_n$
+\begin{equation*}
+    \widetilde{R}^f := r(V_n).
+\end{equation*}
+Let $\phi_k= \d_f$, $k=1, \dots, m$, be the morphisms appearing in the Koszul complex and  
+\begin{equation*}
+    d\phi:=d\phi_1 \cdots d\phi_n = (d\delta_f)^n.
+\end{equation*}
+Then, as noted in the introduction, the residue current $\widetilde{R}^f$ satisfies the formula \eqref{Mats argumentprincip}.
+Note that $\d_f$ is an odd section of $\Ed(\End A)$ and that from \eqref{endconndef} we get
+\begin{equation}
+\label{d av kontraktion}
+    d\d = \d_{df}
+\end{equation}
+where $\d_{df}$ is contraction with the section $\sum_{k=1}^m df_k \otimes e_k^* \in \Ed(A^*)$, so that $\d_{df}$ is an even section of $\Ed(\End A)$, cf.\ \cref{superstructure}.
+For the sequel, we need the following factorisation of the Monge-Ampère product.
+\begin{prop}
+\label{asmMAjmfr}
+For any $\ell \geqslant 1$, we have
+\begin{equation}
+\label{MatsMA}
+ \left(dd^c \log|f|^2 \right)^{\ell} = \frac{1}{(2\pi i )^{\ell} \ell!}\d_{df}^{\ell}\left(\left(\bpd \tau\right)^{\ell} \right).
+\end{equation}
+outside the origin.
+\end{prop}
+\begin{proof}
+We give a proof by induction.
+Moreover, we get from \eqref{contraction on exterior algebra} together with \eqref{morphisms on forms} that
+  \begin{equation*}
+     \d_{df} \left(\bpd \tau\right) = \bpd \left( \frac{1}{|f|^2} \sum_{k=1}^{m} \overline{f_k} df_k \right) = (2\pi i) dd^c \log|f|^2,
+  \end{equation*}
+which proves the base case $\ell=1$. 
+
+Suppose now that \eqref{MatsMA} holds for some $\ell\geqslant 1$.
+For $\ell+1$ we have
+\begin{multline}
+\label{multiple deltas on multiple taus}
+    \d_{df}^{\ell+1} \left( (\bpd \tau )^{\ell+1}\right) = \d_{df}^{\ell}\left( \d_{df}((\bpd \tau)^{\ell+1}) \right)= 
+     (\ell+1) \d_{df}^{\ell}\left( \d_{df}(\bpd \tau)\wedge (\bpd \tau)^{\ell} \right) =\\
+  (\ell+1) \d_{df}(\bpd \tau)\wedge\d_{df}^{\ell} (\bpd \tau)^{\ell} =
+  (2\pi i)^{\ell+1}(\ell+1)! \left( dd^c \log|f|^2 \right)^{\ell+1},
+\end{multline}
+where the third equality follows from the fact that $\d_{df}(\bpd \tau)$ is a pure diffferential form, whence
+   $\d_{df}(\d_{df}(\bpd \tau))=0$. By induction, this proves the result.
+  \end{proof}

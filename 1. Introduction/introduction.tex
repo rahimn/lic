@@ -1,0 +1,93 @@
+Let $X$ be a neighbourhood of the origin $0\in \C^n$ and consider a 
+tuple $f=(f_1, \dots, f_m)$ of holomorphic functions defined on $X$ such that $Z(f):=\{z\in X| f(z)=0\} = \{0\}$. 
+The ideal $\I=(f_1, \dots, f_m) $, defined by $f$, is Artinian with support at the origin. 
+There is a notion of multiplicity of such an ideal, called the Hilbert-Samuel multiplicity $\ehs(\I)$. 
+The classical King's formula states that the mass at the origin of the Monge-Ampère product $(dd^c \log |f|^2)^n$ 
+(see \cref{MA section}) coincides with $e(\I)$, i.e.\
+\begin{equation}
+\label{kings formel}
+    \int_{\{0\}} ( dd^c\log |f|^2)^n = e(\I).
+\end{equation}    
+Therefore, this mass is sometimes taken as an analytic definition of the Hilbert- Samuel multiplicity.
+
+In case $m=n$, so the tuple $f$ defines a complete intersection, then
+it is a well-known result that the Monge-Ampère product factorises as a product of a smooth form and a residue current 
+\begin{equation}
+  (dd^c \log |f|^2)^n = \frac{1}{(2 \pi i)^n} df_1 \wedge \dots \wedge df_n \wedge \bpd \frac{1}{f_n} \wedge \cdots \wedge \bpd \frac{1}{f_1}
+\end{equation}
+where $ \bpd \frac{1}{f_n} \wedge \cdots \wedge \bpd \frac{1}{f_1}$ is the classical Coleff-Herrera product 
+(see \eqref{chproducts}). 
+In case $m=n=1$, then  $f = z^a g$ for some positive integer $a$ and a nonvanishing holomorphic function $g$. 
+The ideal $\I$ defined by $f$ has multiplicity $\ehs ( \I ) = a$. And the above factorisation together with King's formula 
+implies
+\begin{equation}
+\label{arg principen}
+\frac{1}{2\pi i}\bpd\frac{1}{f}\wedge {df} =  a[0]
+\end{equation} which can be viewed as a smooth version of the argument principle (see Remark \ref{arg-principen-remark}).
+
+In \autocite{AnderssonLelong} such  a factorisation was proved to hold in general, giving a formula
+\begin{equation}
+\label{Mats argumentprincip}
+  \frac{1}{(2\pi i )^n n!}d\phi \widetilde{R}^f   =  \ehs ( \I ) [0],
+\end{equation}
+where  $d\phi$ is a smooth form and $\widetilde{R}^f$ is a residue current, both constructed from the
+Koszul complex of $f$ (see \cref{koszul section}). 
+
+If we now instead consider a collection $f_1, \dots, f_r$, where each $f_k$ is a tuple as above (viewed
+as a row vector) and $\I_k$ the corresponding ideal. Then the module $\M = \O/ I_1 \oplus \cdots \oplus \O/I_r$ is Artinian,
+and for any such module one can define the Buchsbaum-Rim multiplicity $\ebr(\M)$.
+Denote by $f$ the block-diagonal matrix
+\begin{equation*}
+ f = \begin{pmatrix}
+    f_1 \\
+    & \ddots \\
+    && f_r
+  \end{pmatrix}
+\end{equation*}
+with these rows as blocks. Then $f$ is clearly surjective outside the origin. For any matrix with full rank $r$ outside a point one can define the so-called \emph{Buchsbaum-Rim multiplicity} of 
+the associated module $\O^r/ \im f$ (or sometimes $\im f$), and this multiplicity coincides with the Hilbert-Samuel multiplicity whenever $r=1$. More generally, for a generically surjective matrix $f$
+there is a complex associated to such a matrix, called the 
+\emph{Buchsbaum-Rim complex}, and in \autocite{AnderssonBR} a residue current $R^f$ is constructed from this complex. 
+
+Returning to the block-diagonal case, we are interested in studying the current $\tr(d\phi R^f)$ that generalises the left hand side of \eqref{Mats argumentprincip}. 
+Our main result is the following extension.
+\begin{theorem}
+\label{ThmB}
+Assume $f$ is a block diagonal $(r\times m)$-matrix where each block is a tuple $f_k$ such that $Z(f_k)=\{0\}$.
+Let $R^f$ be the residue current associated to the Buchsbaum-Rim complex $(H, \phi)$ defined from $f$.
+Then it holds that
+\begin{equation} \label{eqB}
+  \frac{1}{(2\pi i )^n n!} \tr(d\phi R^f) =\ebr(\M)[0],
+\end{equation}
+where $\phi_k$ are the maps in the complex, $d\phi = d\phi_1\cdots d\phi_n$, and $\M = \O^r\im f$.
+\end{theorem}
+
+When $f$ is a tuple of functions, Andersson's proof of \eqref{Mats argumentprincip} relies on the following factorisation
+\begin{equation}
+    \label{Mats MA factorisation}
+  \1_{\{0\}} (dd^c\log |f|^2)^n = \frac{1}
+{(2 \pi i)^n n!}d\phi \widetilde{R}^f ,\end{equation}
+and our proof rests on the following generalisation.
+\begin{theorem}
+\label{ThmA}
+Suppose we are in the situation of \cref{ThmB}. Then it holds that
+\begin{equation} \label{eqA}
+  \frac{ 1 }{(2\pi i )^n n!} \tr (d\phi R^f) =  \sum\limits_{\substack{\alpha \in \N^r \\ |\alpha|=n}} \1_{\{0\} }  \left( dd^c \log|f|^2\right)^{\alpha},
+\end{equation}
+where 
+\begin{equation*}
+   ( dd^c\log|f|^2)^{\alpha} =  ( dd^c\log|f_1|^2)^{\alpha_1}\wedge \cdots \wedge  ( dd^c\log|f_r|^2)^{\alpha_r}.
+\end{equation*}
+\end{theorem}
+For $r$ Artinian ideals $\I_1, \dots, \I_r$ supported at the origin there is a notion of multiplicity $\ehs_{\alpha}(\I_1, \dots, \I_r)$ called the mixed multiplicity of type $\alpha\in \N^r$ (see \cref{multiplicities section}). When $\M \cong \oplus_{k=1}^r\O/\I_k$, as in our situation, the Buchsbaum-Rim multiplicity $\ebr(\M)$ is calculated from the mixed multiplicities as
+\begin{equation}
+\label{lemma 1}
+    \ebr(\M) = \sum_{|\alpha|= n} \ehs_{\alpha}(\I_1, \dots, \I_r).
+\end{equation}
+If $f$ is a matrix as in our situation, then by polarising King's formula we obtain
+\begin{equation}
+\label{lemma 2}
+   \int_{\{0\}} ( dd^c\log|f|^2)^{\alpha} = \ehs_{\alpha} ( \I_1, \dots, \I_r),
+\end{equation}
+see  \cref{mma lelong numbers}.
+ Thus, from \eqref{lemma 1}-\eqref{lemma 2} together with \cref{ThmA} we immediately obtain \cref{ThmB}. 

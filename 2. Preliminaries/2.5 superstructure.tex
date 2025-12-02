@@ -1,0 +1,58 @@
+\subsection{Superstructure}
+\label{superstructure}
+In the sequel, we work with currents and forms with values in graded holomorphic bundles. Endowing these bundles with a so called superstructure gives a coherent framework for how to manipulate these objects. 
+
+Suppose $A =  \oplus_{k=0}^N A_k$ is a graded holomorphic bundle over a complex manifold $X$. We get an induced grading on the endomorphism bundle
+\begin{equation}
+    \End A = \bigoplus_{\nu=-N}^N \left( \bigoplus_{\nu=k-\ell} \Hom( A_{\ell}, A_k ) \right) =: \bigoplus_{\nu} \End_{\nu} A.
+\end{equation}
+We get a superstructure by taking these gradings modulo $2$ giving us a $\Z/2\Z$-grading
+\begin{equation*}
+  A = A_+ \oplus A_-, \quad \End A = \End_+ A \oplus \End_- A
+\end{equation*}
+where $A_+$, $\End_+ A$ denote the direct sum of the subbundles of even degrees and $A_-, \End_- A$ denote the direct sum of the subbundles of odd degrees of $A$ and $\End A$, respectively.
+
+Suppose the bundle $A$ is equipped with a product $\otimes$ that respects the grading, so that the smooth sections $\E(A)$ of $A$ is a graded algebra over the smooth functions $\E$ on $X$. Then, with the superstructure, we can extend this product to the smooth form-valued sections $\Ed(A)$ of $A$, turning $\Ed(A)$ into a graded algebra over smooth forms $\Ed$ on $X$ as follows. 
+First, we give $\Ed(A)$ a grading. If $\alpha = \omega \otimes \xi$, where $\omega$ is a homogeneous form and $\xi$ is a homogeneous section of $A$, then we denote by $\deg \alpha$ the total degree of $\alpha$
+\begin{equation*}
+    \deg \alpha := \deg\omega + \deg \xi.
+\end{equation*}
+Given a  homogeneous form $\omega$ and a homogeneous form-valued section $\omega'\otimes \xi$, we turn $\Ed(A)$ into a right-module over $\Ed$ by
+\begin{equation*}
+    (\omega' \otimes \xi) \otimes \omega := (-1)^{\deg \xi \deg \omega} (\omega\wedge \omega') \otimes \xi.
+\end{equation*} Then, for homogeneous $\alpha = \omega \otimes \xi $ and $\beta = \omega' \otimes \xi'$, 
+we define
+\begin{equation*}
+    \alpha \otimes \beta = (-1)^{\deg \xi \deg \omega'} \omega \wedge \omega' \otimes \xi \otimes \xi'
+\end{equation*}
+extending the product to a product on $\Ed(A)$ that respects the grading. 
+
+Similarly, given homogeneous $\alpha= \omega\otimes \phi$, with $\phi \in \Ed(\End_{\nu}A)$, and $\beta = \omega' \otimes \xi$, we define
+\begin{equation}
+\label{morphisms on forms}
+    \alpha(\beta) = (-1)^{\deg \phi \deg \omega'} \omega\wedge\omega' \otimes \phi(\xi).
+\end{equation}
+Moreover, the form-valued sections $\Ed(\End A)$ of the endomorphism bundle naturally has structure of a graded algebra over $\E$ under composition of maps, and we can extend this to a graded algebra over $\Ed$ as above.
+
+Let $D_{A}$ be a connection on $A$. Then for form-valued sections $\alpha, \beta\in \Ed(A)$ we have a Leibniz rule 
+\begin{equation}
+    D_A(\alpha\otimes \beta) = D_A\alpha \otimes \beta + (-1)^{\deg \alpha} \alpha \otimes D_A\beta.
+\end{equation}
+We also get an induced connection $D_{\End}$ on $\End A$ which on form-valued endomorphisms $\alpha\in \Ed( \End A)$ is defined by
+\begin{equation}
+\label{endconndef}
+    D_{\End} \alpha  = D_E \circ \alpha - (-1)^{\deg\alpha} \alpha\circ D_E.
+\end{equation}
+This connection also satisfies Leibniz' rule, i.e.\ for $\alpha, \beta \in \Ed(\End A)$, we have
+\begin{equation}
+\label{leibnizendconn}
+    D_{\End}( \alpha \beta)  = D_{\End}\alpha \beta + (-1)^{\deg\alpha} \alpha D_{\End }\beta.
+\end{equation}
+Finally, note that a form-valued section $\alpha \in \Ed(A)$ defines an endomorphism
+\begin{equation}
+    \alpha(\beta):= \alpha\otimes \beta
+\end{equation}
+and in fact
+\begin{equation*}
+    D_{\End} \alpha (\beta) = D_E\alpha(\beta).
+\end{equation*}

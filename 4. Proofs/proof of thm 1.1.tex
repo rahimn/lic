@@ -1,0 +1,26 @@
+\begin{proof}[Proof of \cref{ThmA}]
+\label{proofofA}
+From \cref{traceofres} together with \cref{residytermvisjmfr} we get that 
+\begin{multline}
+\label{sum with alpha}
+    r(\tr (d\phi u_n)) = \\
+    (2\pi i )^n \1_{\{0\}}\left(\sum_{k=1}^r \sum_{|\alpha|=n-1} (n-1)!(\alpha_k + 1) dd^c \log | f_k |^2\wedge  (dd^c \log | f |^2)^{\alpha}\right).
+\end{multline}
+Let $v_k \in \N^r$ be the unit vector with a $1$ in the $k$:th position.  We rewrite the sum in \eqref{sum with alpha}
+\begin{multline}
+\label{pascals triangel 1}
+    \sum_{k=1}^r \sum_{|\alpha|=n-1} \binom{n-1}{\alpha} (\alpha+v_k)!(dd^c \log | f |^2)^{\alpha+v_k} =  \\
+    \sum_{|\beta|=n} \sum_{k=1}^r \binom{n-1}{\beta-v_k} \beta! (dd^c \log | f |^2)^{\beta}.
+\end{multline}
+The sum over $k$ is then calculated to 
+\begin{equation}
+\label{pascals triangel 2}
+\sum_{k=1}^r \binom{n-1}{\beta-v_k} \beta! = \binom{n}{\beta} \beta! = n!
+\end{equation}
+as the coefficient  of $(dd^c \log |f|^2)^{\beta}$.
+Finally, we see that the right hand side of \eqref{sum with alpha} can be written
+\begin{equation}
+    (2\pi i )^n n! \sum_{|\beta|=n} \1_{\{0\}}(dd^c \log | f |^2)^{\beta}
+\end{equation}
+which is precisely what we wanted to prove.
+\end{proof}
